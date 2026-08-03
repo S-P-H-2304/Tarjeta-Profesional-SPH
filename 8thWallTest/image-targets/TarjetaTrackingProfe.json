@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 0,
+    "left": 0,
+    "width": 960,
+    "height": 1280,
+    "isRotated": false,
+    "originalWidth": 960,
+    "originalHeight": 1280
+  },
+  "imagePath": "image-targets/TarjetaTrackingProfe_luminance.jpg",
+  "metadata": null,
+  "name": "TarjetaTrackingProfe",
+  "resources": {
+    "originalImage": "TarjetaTrackingProfe_original.jpg",
+    "croppedImage": "TarjetaTrackingProfe_cropped.jpg",
+    "thumbnailImage": "TarjetaTrackingProfe_thumbnail.jpg",
+    "luminanceImage": "TarjetaTrackingProfe_luminance.jpg"
+  },
+  "created": 1785774432841,
+  "updated": 1785774432841
+}
