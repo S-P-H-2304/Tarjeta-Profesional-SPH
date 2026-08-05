@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 47,
+    "left": 0,
+    "width": 1240,
+    "height": 1653,
+    "isRotated": false,
+    "originalWidth": 1240,
+    "originalHeight": 1748
+  },
+  "imagePath": "image-targets/TarjetaProfesionalSPH_luminance.png",
+  "metadata": null,
+  "name": "TarjetaProfesionalSPH",
+  "resources": {
+    "originalImage": "TarjetaProfesionalSPH_original.png",
+    "croppedImage": "TarjetaProfesionalSPH_cropped.png",
+    "thumbnailImage": "TarjetaProfesionalSPH_thumbnail.png",
+    "luminanceImage": "TarjetaProfesionalSPH_luminance.png"
+  },
+  "created": 1785943106723,
+  "updated": 1785943106723
+}
