@@ -138,7 +138,17 @@
         "loop": true
       },
       "name": "Avatar_final.glb",
-      "order": 2.3713258793899445
+      "order": 2.3713258793899445,
+      "collider": {
+        "geometry": {
+          "type": "box",
+          "depth": 1,
+          "height": 2,
+          "width": 0.8
+        },
+        "eventOnly": true,
+        "offsetY": 1
+      }
     },
     "e6fa7481-8fc2-4234-bd39-67eb35955fee": {
       "id": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
@@ -200,22 +210,7 @@
         }
       },
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {
-        "4a2a0602-0257-4947-b211-990794bdea77": {
-          "id": "4a2a0602-0257-4947-b211-990794bdea77",
-          "name": "video",
-          "parameters": {
-            "button": {
-              "type": "entity",
-              "id": "248bff19-30e6-4182-af5f-2c584ff3b73b"
-            },
-            "video": {
-              "type": "entity",
-              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
-            }
-          }
-        }
-      },
+      "components": {},
       "name": "VideoReel",
       "order": 6.43690593298429,
       "videoControls": {}
@@ -241,7 +236,22 @@
       "geometry": null,
       "material": null,
       "parentId": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
-      "components": {},
+      "components": {
+        "aefaca56-b642-4bb6-b124-3ebb4fa1e5b3": {
+          "id": "aefaca56-b642-4bb6-b124-3ebb4fa1e5b3",
+          "name": "video",
+          "parameters": {
+            "button": {
+              "type": "entity",
+              "id": "248bff19-30e6-4182-af5f-2c584ff3b73b"
+            },
+            "video": {
+              "type": "entity",
+              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            }
+          }
+        }
+      },
       "ui": {
         "type": "3d",
         "width": 648,
