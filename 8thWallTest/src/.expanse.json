@@ -115,7 +115,20 @@
       "geometry": null,
       "material": null,
       "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
-      "components": {},
+      "components": {
+        "d9968125-a1c8-44a1-a26f-ff9cd1a35adb": {
+          "id": "d9968125-a1c8-44a1-a26f-ff9cd1a35adb",
+          "name": "avatarAnimationToggle",
+          "parameters": {
+            "avatar": {
+              "type": "entity",
+              "id": "9993fe3e-ad72-4768-95ae-f422e6c0a4cb"
+            },
+            "animationDefault": "Idle",
+            "animationAlt": "Waving"
+          }
+        }
+      },
       "gltfModel": {
         "src": {
           "type": "asset",
@@ -154,6 +167,128 @@
         "name": "TarjetaProfesionalSPH"
       },
       "order": 4.544247261710564
+    },
+    "64153167-4c55-4ea8-a66e-f2d683ea7c0c": {
+      "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
+      "position": [
+        0,
+        3.1707292831433183,
+        -15.79557769320516
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        6.407889638881773,
+        6.407889979861482,
+        6.407889979861482
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/OJOS.mp4"
+        }
+      },
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {
+        "4a2a0602-0257-4947-b211-990794bdea77": {
+          "id": "4a2a0602-0257-4947-b211-990794bdea77",
+          "name": "video",
+          "parameters": {
+            "button": {
+              "type": "entity",
+              "id": "248bff19-30e6-4182-af5f-2c584ff3b73b"
+            },
+            "video": {
+              "type": "entity",
+              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            }
+          }
+        }
+      },
+      "name": "VideoReel",
+      "order": 6.43690593298429,
+      "videoControls": {}
+    },
+    "248bff19-30e6-4182-af5f-2c584ff3b73b": {
+      "id": "248bff19-30e6-4182-af5f-2c584ff3b73b",
+      "position": [
+        0.0007049798778286927,
+        0.00010751563884137116,
+        0.11873657953420125
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.15605761902205728,
+        0.15605761071784457,
+        0.15605761071784457
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
+      "components": {},
+      "ui": {
+        "type": "3d",
+        "width": 648,
+        "height": 628,
+        "flexDirection": "row",
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexWrap": "nowrap"
+      },
+      "name": "Botón",
+      "order": 8.268514998736977
+    },
+    "b3954b4e-4542-49b8-8082-198d0612d685": {
+      "id": "b3954b4e-4542-49b8-8082-198d0612d685",
+      "position": [
+        -0.323,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "248bff19-30e6-4182-af5f-2c584ff3b73b",
+      "components": {},
+      "name": "Icono",
+      "ui": {
+        "width": 16,
+        "height": 16,
+        "image": {
+          "type": "url",
+          "url": "https://cdn.8thwall.com/web/assets/sprites/8w-icon-m8j35d7y.png"
+        },
+        "backgroundOpacity": 1
+      },
+      "order": 0.4245904252929345
     }
   },
   "spaces": {
