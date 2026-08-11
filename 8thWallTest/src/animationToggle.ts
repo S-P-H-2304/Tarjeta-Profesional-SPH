@@ -12,6 +12,12 @@ ecs.registerComponent({
 
     ecs.defineState('default')
       .initial()
+      .onEnter(() => {
+        ecs.GltfModel.mutate(world, avatar, (cursor) => {
+          cursor.animationClip = animationDefault
+          return false
+        })
+      })
       .listen(avatar, ecs.input.SCREEN_TOUCH_START, () => {
         ecs.GltfModel.mutate(world, avatar, (cursor) => {
           cursor.animationClip = cursor.animationClip === animationDefault

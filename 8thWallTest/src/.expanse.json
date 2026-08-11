@@ -134,7 +134,7 @@
           "type": "asset",
           "asset": "assets/Avatar_final.glb"
         },
-        "animationClip": "Waving",
+        "animationClip": "Idle",
         "loop": true
       },
       "name": "Avatar_final.glb",
@@ -220,7 +220,7 @@
       "position": [
         0.0007049798778286927,
         0.00010751563884137116,
-        0.11873657953420125
+        0.02785089945981456
       ],
       "rotation": [
         0,
@@ -290,13 +290,15 @@
       "components": {},
       "name": "Icono",
       "ui": {
-        "width": 16,
-        "height": 16,
+        "width": 300,
+        "height": 300,
         "image": {
-          "type": "url",
-          "url": "https://cdn.8thwall.com/web/assets/sprites/8w-icon-m8j35d7y.png"
+          "type": "asset",
+          "asset": "assets/PlayButton.png"
         },
-        "backgroundOpacity": 1
+        "backgroundOpacity": 1,
+        "borderRadius": 0,
+        "backgroundSize": "contain"
       },
       "order": 0.4245904252929345
     }
