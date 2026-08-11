@@ -248,6 +248,10 @@
             "video": {
               "type": "entity",
               "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            },
+            "icon": {
+              "type": "entity",
+              "id": "b3954b4e-4542-49b8-8082-198d0612d685"
             }
           }
         }
