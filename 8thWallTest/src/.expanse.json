@@ -321,7 +321,7 @@
           "type": "asset",
           "asset": "assets/PlayButton.png"
         },
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0,
         "borderRadius": 0,
         "backgroundSize": "contain"
       },
@@ -602,7 +602,7 @@
           "type": "asset",
           "asset": "assets/RestartButton.png"
         },
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0,
         "borderRadius": 0,
         "backgroundSize": "contain"
       },
