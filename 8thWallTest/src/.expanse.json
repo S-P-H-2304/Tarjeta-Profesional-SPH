@@ -181,20 +181,20 @@
     "64153167-4c55-4ea8-a66e-f2d683ea7c0c": {
       "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
       "position": [
-        0,
-        3.1707292831433183,
-        -15.79557769320516
+        -1.671386126569745e-32,
+        0.732473605851867,
+        0.4794146927577691
       ],
       "rotation": [
-        0,
-        0,
-        0,
-        1
+        0.7071067811865476,
+        -1.232595164407831e-32,
+        1.232595164407831e-32,
+        0.7071067811865475
       ],
       "scale": [
-        6.407889638881773,
-        6.407889979861482,
-        6.407889979861482
+        0.9688737725993175,
+        0.9688738241554952,
+        0.9688738241554952
       ],
       "geometry": {
         "type": "plane",
@@ -209,10 +209,10 @@
           "asset": "assets/OJOS.mp4"
         }
       },
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
       "components": {},
       "name": "VideoReel",
-      "order": 6.43690593298429,
+      "order": 4.593611740522664,
       "videoControls": {}
     },
     "248bff19-30e6-4182-af5f-2c584ff3b73b": {
@@ -252,50 +252,71 @@
             "icon": {
               "type": "entity",
               "id": "b3954b4e-4542-49b8-8082-198d0612d685"
+            },
+            "playPauseButton": {
+              "type": "entity",
+              "id": "248bff19-30e6-4182-af5f-2c584ff3b73b"
+            },
+            "playIcon": {
+              "type": "entity",
+              "id": "b3954b4e-4542-49b8-8082-198d0612d685"
+            },
+            "restartIcon": {
+              "type": "entity",
+              "id": "5818c190-7788-4def-aecb-cb2ba5aabc1d"
+            },
+            "restartButton": {
+              "type": "entity",
+              "id": "dab6c64b-6823-403c-8000-c44dff8a97c3"
             }
           }
         }
       },
       "ui": {
+        "flexDirection": "row",
         "type": "3d",
         "width": 648,
         "height": 628,
-        "flexDirection": "row",
-        "padding": "10",
-        "gap": "6",
-        "alignItems": "center",
         "justifyContent": "center",
+        "alignItems": "center",
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "margin": "",
+        "marginTop": 0,
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "marginRight": 0,
         "flexWrap": "nowrap"
       },
-      "name": "Botón",
+      "name": "PauseButton",
       "order": 8.268514998736977
     },
     "b3954b4e-4542-49b8-8082-198d0612d685": {
       "id": "b3954b4e-4542-49b8-8082-198d0612d685",
       "position": [
-        -0.323,
-        0,
+        -0.040854658440569624,
+        0.9728297548669915,
         0
       ],
       "rotation": [
-        0,
-        0,
-        0,
+        -1.9368261034188215e-96,
+        -2.2789362589823517e-64,
+        -6.123491439630284e-49,
         1
       ],
       "scale": [
         1,
-        1,
-        1
+        0.9999999999999999,
+        0.9999999999999999
       ],
       "geometry": null,
       "material": null,
       "parentId": "248bff19-30e6-4182-af5f-2c584ff3b73b",
       "components": {},
-      "name": "Icono",
+      "name": "PauseIcon",
       "ui": {
-        "width": 300,
-        "height": 300,
+        "width": 200,
+        "height": 200,
         "image": {
           "type": "asset",
           "asset": "assets/PlayButton.png"
@@ -304,7 +325,7 @@
         "borderRadius": 0,
         "backgroundSize": "contain"
       },
-      "order": 0.4245904252929345
+      "order": 6.033272817118332
     },
     "81b397c6-d8a5-4614-92c2-2385c7a17def": {
       "id": "81b397c6-d8a5-4614-92c2-2385c7a17def",
@@ -487,6 +508,105 @@
       },
       "name": "Botón IG",
       "order": 13.823167019581822
+    },
+    "dab6c64b-6823-403c-8000-c44dff8a97c3": {
+      "id": "dab6c64b-6823-403c-8000-c44dff8a97c3",
+      "position": [
+        0.007258834140943657,
+        -0.3356235221500673,
+        0.0661060856426352
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        0.15605761902205728,
+        0.15605761071784457,
+        0.15605761071784457
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
+      "components": {
+        "aefaca56-b642-4bb6-b124-3ebb4fa1e5b3": {
+          "id": "aefaca56-b642-4bb6-b124-3ebb4fa1e5b3",
+          "name": "video",
+          "parameters": {
+            "button": {
+              "type": "entity",
+              "id": "dab6c64b-6823-403c-8000-c44dff8a97c3"
+            },
+            "video": {
+              "type": "entity",
+              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            },
+            "icon": {
+              "type": "entity",
+              "id": "5818c190-7788-4def-aecb-cb2ba5aabc1d"
+            },
+            "playPauseButton": {
+              "type": "entity",
+              "id": "dab6c64b-6823-403c-8000-c44dff8a97c3"
+            },
+            "playIcon": {
+              "type": "entity",
+              "id": "5818c190-7788-4def-aecb-cb2ba5aabc1d"
+            }
+          }
+        }
+      },
+      "ui": {
+        "type": "3d",
+        "width": 130,
+        "height": 130,
+        "flexDirection": "row",
+        "padding": "10",
+        "gap": "6",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "flexWrap": "nowrap"
+      },
+      "name": "RestartButton",
+      "order": 9.35468207066671
+    },
+    "5818c190-7788-4def-aecb-cb2ba5aabc1d": {
+      "id": "5818c190-7788-4def-aecb-cb2ba5aabc1d",
+      "position": [
+        -0.323,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "dab6c64b-6823-403c-8000-c44dff8a97c3",
+      "components": {},
+      "name": "RestartIcon",
+      "ui": {
+        "width": 100,
+        "height": 100,
+        "image": {
+          "type": "asset",
+          "asset": "assets/RestartButton.png"
+        },
+        "backgroundOpacity": 1,
+        "borderRadius": 0,
+        "backgroundSize": "contain"
+      },
+      "order": 0.4245904252929345
     }
   },
   "spaces": {
