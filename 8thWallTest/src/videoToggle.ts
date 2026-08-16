@@ -1,19 +1,24 @@
 import * as ecs from '@8thwall/ecs'
 
 ecs.registerComponent({
-  name: 'video',
+  name: 'videoController',
   schema: {
-    playPauseButton: ecs.eid,
-    restartButton: ecs.eid,
+    playPauseButton: ecs.eid,   // botón invisible en la pantalla
+    restartButton: ecs.eid,     // botón invisible en la pantalla
+    dpadPlayButton: ecs.eid,    // botón UI sobre la cruceta
+    dpadRestartButton: ecs.eid, // botón UI sobre la cruceta
     video: ecs.eid,
     playIcon: ecs.eid,
     restartIcon: ecs.eid,
   },
   stateMachine: ({world, eid, schemaAttribute}) => {
-    const {playPauseButton, restartButton, video, playIcon, restartIcon} = schemaAttribute.get(eid)
+    const {
+      playPauseButton, restartButton,
+      dpadPlayButton, dpadRestartButton,
+      video, playIcon, restartIcon,
+    } = schemaAttribute.get(eid)
 
     let isPaused = false
-    let hasEnded = false
 
     const updateIcons = () => {
       ecs.Ui.mutate(world, playIcon, (cursor) => {
@@ -26,36 +31,30 @@ ecs.registerComponent({
       })
     }
 
+    const togglePlayPause = () => {
+      isPaused = !isPaused
+      ecs.VideoControls.mutate(world, video, (cursor) => {
+        cursor.paused = isPaused
+        return false
+      })
+      updateIcons()
+    }
+
+    const restartVideo = () => {
+      ecs.video.setCurrentTime(world, video, 0)
+      ecs.VideoControls.mutate(world, video, (cursor) => {
+        cursor.paused = false
+        return false
+      })
+      isPaused = false
+      updateIcons()
+    }
+
     ecs.defineState('default')
       .initial()
-      .listen(playPauseButton, ecs.input.UI_CLICK, () => {
-        if (hasEnded) {
-          ecs.video.setCurrentTime(world, video, 0)
-          hasEnded = false
-        }
-        isPaused = !isPaused
-        ecs.VideoControls.mutate(world, video, (cursor) => {
-          cursor.paused = isPaused
-          return false
-        })
-        updateIcons()
-      })
-      .listen(restartButton, ecs.input.UI_CLICK, () => {
-        if (!isPaused) return
-
-        ecs.video.setCurrentTime(world, video, 0)
-        hasEnded = false
-        isPaused = false
-        ecs.VideoControls.mutate(world, video, (cursor) => {
-          cursor.paused = false
-          return false
-        })
-        updateIcons()
-      })
-      .listen(video, ecs.events.VIDEO_END, () => {
-        isPaused = true
-        hasEnded = true
-        updateIcons()
-      })
+      .listen(playPauseButton, ecs.input.UI_CLICK, togglePlayPause)
+      .listen(dpadPlayButton, ecs.input.UI_CLICK, togglePlayPause)
+      .listen(restartButton, ecs.input.UI_CLICK, restartVideo)
+      .listen(dpadRestartButton, ecs.input.UI_CLICK, restartVideo)
   },
 })
