@@ -3,35 +3,31 @@ import * as ecs from '@8thwall/ecs'
 ecs.registerComponent({
   name: 'videoController',
   schema: {
-    playPauseButton: ecs.eid,   // botón invisible en la pantalla
-    restartButton: ecs.eid,     // botón invisible en la pantalla
-    dpadPlayButton: ecs.eid,    // botón UI sobre la cruceta
-    dpadRestartButton: ecs.eid, // botón UI sobre la cruceta
+    switchModel: ecs.eid,
+    dpadPlayButton: ecs.eid,
+    dpadRestartButton: ecs.eid,
     video: ecs.eid,
     playIcon: ecs.eid,
-    restartIcon: ecs.eid,
   },
   stateMachine: ({world, eid, schemaAttribute}) => {
     const {
-      playPauseButton, restartButton,
-      dpadPlayButton, dpadRestartButton,
-      video, playIcon, restartIcon,
+      switchModel, dpadPlayButton, dpadRestartButton,
+      video, playIcon,
     } = schemaAttribute.get(eid)
 
     let isPaused = false
+    let videoReady = false
 
     const updateIcons = () => {
       ecs.Ui.mutate(world, playIcon, (cursor) => {
         cursor.opacity = isPaused ? 1 : 0
         return false
       })
-      ecs.Ui.mutate(world, restartIcon, (cursor) => {
-        cursor.opacity = isPaused ? 1 : 0
-        return false
-      })
     }
 
     const togglePlayPause = () => {
+      if (!videoReady) return // ignora toques antes de que el video esté disponible
+
       isPaused = !isPaused
       ecs.VideoControls.mutate(world, video, (cursor) => {
         cursor.paused = isPaused
@@ -41,6 +37,8 @@ ecs.registerComponent({
     }
 
     const restartVideo = () => {
+      if (!videoReady) return
+
       ecs.video.setCurrentTime(world, video, 0)
       ecs.VideoControls.mutate(world, video, (cursor) => {
         cursor.paused = false
@@ -52,9 +50,10 @@ ecs.registerComponent({
 
     ecs.defineState('default')
       .initial()
-      .listen(playPauseButton, ecs.input.UI_CLICK, togglePlayPause)
+      .listen(switchModel, ecs.events.GLTF_ANIMATION_FINISHED, () => {
+        videoReady = true
+      })
       .listen(dpadPlayButton, ecs.input.UI_CLICK, togglePlayPause)
-      .listen(restartButton, ecs.input.UI_CLICK, restartVideo)
       .listen(dpadRestartButton, ecs.input.UI_CLICK, restartVideo)
   },
 })

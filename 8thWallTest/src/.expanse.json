@@ -154,13 +154,13 @@
       "id": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
       "position": [
         0,
-        2.03062010690209,
+        2.034856812837075,
         -17.83486571642899
       ],
       "rotation": [
         -0.7071067811865475,
-        1.232595164407831e-32,
-        -1.2325951644078305e-32,
+        1.2325951644078312e-32,
+        -1.2325951644078307e-32,
         0.7071067811865476
       ],
       "scale": [
@@ -181,20 +181,20 @@
     "64153167-4c55-4ea8-a66e-f2d683ea7c0c": {
       "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
       "position": [
-        -0.10758452988256305,
-        10.696244277810203,
-        -23.859085455699866
+        -0.017022356487609153,
+        0.9531706470576973,
+        1.1737260320870848
       ],
       "rotation": [
-        1.110223024625157e-16,
-        6.689911849103872e-32,
-        1.1102230246251541e-16,
-        1
+        0.7071067811865475,
+        -7.850462293418855e-17,
+        7.850462293418862e-17,
+        0.7071067811865476
       ],
       "scale": [
-        9.752933045079159,
-        5.527311699485895,
-        4.54063571820913
+        1.5431391787866013,
+        0.8745483227884716,
+        0.7184334026471806
       ],
       "geometry": {
         "type": "plane",
@@ -207,9 +207,10 @@
         "textureSrc": {
           "type": "asset",
           "asset": "assets/OJOS.mp4"
-        }
+        },
+        "opacity": 0
       },
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
       "components": {
         "f35301e4-0252-417c-9290-954790aa5c13": {
           "id": "f35301e4-0252-417c-9290-954790aa5c13",
@@ -242,14 +243,45 @@
             "dpadRestartButton": {
               "type": "entity",
               "id": "75c5b473-2b81-425f-acac-801a692a9681"
+            },
+            "switchModel": {
+              "type": "entity",
+              "id": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303"
+            }
+          }
+        },
+        "1f508bfe-79b6-4cb8-b461-d7a1b7c4791a": {
+          "id": "1f508bfe-79b6-4cb8-b461-d7a1b7c4791a",
+          "name": "trackerVideoAnimationSync",
+          "parameters": {
+            "switchModel": {
+              "type": "entity",
+              "id": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303"
+            },
+            "videoScreen": {
+              "type": "entity",
+              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            },
+            "video": {
+              "type": "entity",
+              "id": "64153167-4c55-4ea8-a66e-f2d683ea7c0c"
+            },
+            "dpadPlayIcon": {
+              "type": "entity",
+              "id": "10e9da13-0970-4b29-84bc-a106b1785d21"
+            },
+            "dpadRestartIcon": {
+              "type": "entity",
+              "id": "ce492e13-746c-4333-a730-97c466b83438"
             }
           }
         }
       },
       "name": "VideoReel",
-      "order": 8.676992678089245,
+      "order": 5.684032979123169,
       "videoControls": {
-        "loop": true
+        "loop": true,
+        "paused": true
       }
     },
     "248bff19-30e6-4182-af5f-2c584ff3b73b": {
@@ -288,7 +320,8 @@
         "marginBottom": 0,
         "marginLeft": 0,
         "marginRight": 0,
-        "flexWrap": "nowrap"
+        "flexWrap": "nowrap",
+        "ignoreRaycast": true
       },
       "name": "PauseButton",
       "order": 9.09446959943435
@@ -512,105 +545,32 @@
       "name": "Botón IG",
       "order": 13.823167019581822
     },
-    "dab6c64b-6823-403c-8000-c44dff8a97c3": {
-      "id": "dab6c64b-6823-403c-8000-c44dff8a97c3",
-      "position": [
-        -0.385541388215887,
-        -0.3705197052260498,
-        0.029793908692631987
-      ],
-      "rotation": [
-        -6.84082722893696e-127,
-        0,
-        1.460317243014051e-63,
-        1
-      ],
-      "scale": [
-        0.15605761902205728,
-        0.15605761071784457,
-        0.15605761071784463
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "64153167-4c55-4ea8-a66e-f2d683ea7c0c",
-      "components": {},
-      "ui": {
-        "type": "3d",
-        "width": 150,
-        "height": 150,
-        "flexDirection": "row",
-        "padding": "10",
-        "gap": "6",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "flexWrap": "nowrap"
-      },
-      "name": "RestartButton",
-      "order": 9.340078458511085
-    },
-    "5818c190-7788-4def-aecb-cb2ba5aabc1d": {
-      "id": "5818c190-7788-4def-aecb-cb2ba5aabc1d",
-      "position": [
-        -0.323,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "dab6c64b-6823-403c-8000-c44dff8a97c3",
-      "components": {},
-      "name": "RestartIcon",
-      "ui": {
-        "width": 50,
-        "height": 70,
-        "image": {
-          "type": "asset",
-          "asset": "assets/RestartButton.png"
-        },
-        "backgroundOpacity": 1,
-        "borderRadius": 0,
-        "backgroundSize": "stretch",
-        "opacity": 0.03
-      },
-      "order": 0.4245904252929345
-    },
     "ceb41998-45fc-47ed-83bc-b7314b2cefa9": {
       "id": "ceb41998-45fc-47ed-83bc-b7314b2cefa9",
       "position": [
-        6.539203339356184,
-        8.109413320886844,
-        -15.379407378963865
+        0.11526359947482412,
+        1.204220448496077,
+        -1.9898805856376875
       ],
       "rotation": [
-        1.1102230246251563e-16,
-        1.1102230246251565e-16,
-        1.1102230246251558e-16,
-        1
+        1.5700924586837742e-16,
+        0.7071067811865468,
+        6.101034794473666e-32,
+        0.7071067811865482
       ],
       "scale": [
-        1.2986397692413494,
-        1.2986397692413503,
-        1.2986397692413494
+        0.37584320015049916,
+        0.37584320015049916,
+        0.37584320015049916
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303",
       "components": {},
       "ui": {
         "type": "3d",
-        "width": 100,
-        "height": 80,
+        "width": 300,
+        "height": 590,
         "flexDirection": "row",
         "padding": "10",
         "gap": "6",
@@ -642,45 +602,46 @@
       "material": null,
       "parentId": "ceb41998-45fc-47ed-83bc-b7314b2cefa9",
       "components": {},
-      "name": "Icono",
+      "name": "PlayButtonJoycon",
       "ui": {
-        "width": 27,
-        "height": 27,
+        "width": 40,
+        "height": 40,
         "image": {
           "type": "asset",
           "asset": "assets/PlayButton.png"
         },
         "backgroundOpacity": 1,
-        "backgroundSize": "contain"
+        "backgroundSize": "contain",
+        "opacity": 0
       },
       "order": 0.0049464957906570906
     },
     "75c5b473-2b81-425f-acac-801a692a9681": {
       "id": "75c5b473-2b81-425f-acac-801a692a9681",
       "position": [
-        -6.778406297792203,
-        5.785191418046647,
-        -15.379407378963862
+        0.11540565778538348,
+        0.8668965601484593,
+        2.04806521280851
       ],
       "rotation": [
-        1.1102230246251563e-16,
-        1.1102230246251565e-16,
-        1.1102230246251558e-16,
-        1
+        1.5700924586837742e-16,
+        0.7071067811865468,
+        6.101034794473666e-32,
+        0.7071067811865482
       ],
       "scale": [
-        1.2986397692413494,
-        1.2986397692413503,
-        1.2986397692413494
+        0.37584320015049916,
+        0.37584320015049916,
+        0.37584320015049916
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303",
       "components": {},
       "ui": {
         "type": "3d",
-        "width": 100,
-        "height": 80,
+        "width": 310,
+        "height": 580,
         "flexDirection": "row",
         "padding": "10",
         "gap": "6",
@@ -712,40 +673,41 @@
       "material": null,
       "parentId": "75c5b473-2b81-425f-acac-801a692a9681",
       "components": {},
-      "name": "Icono (1)",
+      "name": "RestartButtonJoycon",
       "ui": {
-        "width": 27,
-        "height": 27,
+        "width": 40,
+        "height": 40,
         "image": {
           "type": "asset",
           "asset": "assets/RestartButton.png"
         },
         "backgroundOpacity": 1,
-        "backgroundSize": "contain"
+        "backgroundSize": "contain",
+        "opacity": 0
       },
       "order": 0.0049464957906570906
     },
     "3e4e21cb-5724-4b90-99e8-1bd8f9a75303": {
       "id": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303",
       "position": [
-        0.0032826188238699212,
-        7.700151502347206,
-        -24.182757717940753
+        0.0005193860854701434,
+        1.0043830717346425,
+        0.6996749826513287
       ],
       "rotation": [
-        0,
-        -0.7071067811865467,
-        0,
-        0.7071067811865483
+        0.5000000000000006,
+        -0.49999999999999944,
+        -0.49999999999999933,
+        0.5000000000000007
       ],
       "scale": [
-        3.4552700932764893,
-        3.455270093276491,
-        3.4552700932764893
+        0.5467035023802226,
+        0.5467035023802229,
+        0.5467035023802225
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
       "components": {},
       "gltfModel": {
         "src": {
@@ -757,29 +719,29 @@
         "paused": false
       },
       "name": "Switch.glb",
-      "order": 7.155140232491524
+      "order": 5.563270399125596
     },
     "961c1ec7-3c56-4975-898f-6fec481bf1ca": {
       "id": "961c1ec7-3c56-4975-898f-6fec481bf1ca",
       "position": [
-        0,
-        0.19494478219390388,
-        -14.054418390396496
+        1.014921300330064e-32,
+        -0.5981540481386989,
+        -0.29111656225701543
       ],
       "rotation": [
-        0,
-        1,
-        0,
-        -6.123233995736765e-17
+        -4.329780281177466e-17,
+        0.7071067811865476,
+        0.7071067811865475,
+        -4.3297802811774646e-17
       ],
       "scale": [
-        0.46897022013597844,
-        0.46897022013597844,
-        0.46897022013597844
+        0.07420191618573053,
+        0.07420191618573055,
+        0.07420191618573055
       ],
       "geometry": null,
       "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
       "components": {},
       "gltfModel": {
         "src": {
@@ -790,7 +752,149 @@
         "loop": true
       },
       "name": "Ring_de_boxeo.glb",
-      "order": 10.536249043036548
+      "order": 5.804795559120742
+    },
+    "a06a22e1-7c48-468a-9a4b-f21b25e7c401": {
+      "id": "a06a22e1-7c48-468a-9a4b-f21b25e7c401",
+      "position": [
+        -0.5731393356968507,
+        -0.6256602445521455,
+        -0.01954742379679486
+      ],
+      "rotation": [
+        -4.3297802811774677e-17,
+        0.7071067811865476,
+        0.7071067811865475,
+        -4.329780281177465e-17
+      ],
+      "scale": [
+        0.10630701849021625,
+        0.10630701849021627,
+        0.10630701849021627
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Kirby.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "Kirby.glb",
+      "order": 4.4329418416008055
+    },
+    "fda9f17c-cfa8-4a95-afa1-124f12beb7f7": {
+      "id": "fda9f17c-cfa8-4a95-afa1-124f12beb7f7",
+      "position": [
+        0.503794152514349,
+        -0.6843527411228445,
+        -0.008417558675475001
+      ],
+      "rotation": [
+        -4.329780281177467e-17,
+        0.7071067811865476,
+        0.7071067811865475,
+        -4.329780281177465e-17
+      ],
+      "scale": [
+        0.08693209345813974,
+        0.08693209345813974,
+        0.08693209345813975
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "e6fa7481-8fc2-4234-bd39-67eb35955fee",
+      "components": {},
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Pikachu.glb"
+        },
+        "animationClip": "",
+        "loop": true
+      },
+      "name": "Pikachu.glb",
+      "order": 4.442507819128023
+    },
+    "521284b6-0ff3-44f7-9cc7-8867a86c2798": {
+      "id": "521284b6-0ff3-44f7-9cc7-8867a86c2798",
+      "position": [
+        -0.4717377004502641,
+        2.0916717970944516,
+        -2.5587698321956167
+      ],
+      "rotation": [
+        0,
+        0.7071067811865467,
+        0,
+        0.7071067811865483
+      ],
+      "scale": [
+        0.2894129758324454,
+        0.28941297583244524,
+        0.2894129758324454
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303",
+      "components": {},
+      "ui": {
+        "width": 753,
+        "height": 303,
+        "text": "Para pausar, toca el Joycon rojo",
+        "color": "#ffffff",
+        "fontSize": 40,
+        "type": "3d",
+        "ignoreRaycast": true,
+        "font": {
+          "type": "font",
+          "font": "Press Start 2p"
+        }
+      },
+      "name": "TextoJoyconRojo",
+      "order": 7.168792554942748
+    },
+    "024e531a-b52e-467b-9ab6-27aa9d89563c": {
+      "id": "024e531a-b52e-467b-9ab6-27aa9d89563c",
+      "position": [
+        -0.47173770045027474,
+        2.0916717970944516,
+        1.9649495326846014
+      ],
+      "rotation": [
+        0,
+        0.7071067811865467,
+        0,
+        0.7071067811865483
+      ],
+      "scale": [
+        0.2894129758324454,
+        0.28941297583244524,
+        0.2894129758324454
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "3e4e21cb-5724-4b90-99e8-1bd8f9a75303",
+      "components": {},
+      "ui": {
+        "width": 944,
+        "height": 303,
+        "text": "Para reiniciar, toca el Joycon azul",
+        "color": "#ffffff",
+        "fontSize": 40,
+        "type": "3d",
+        "ignoreRaycast": true,
+        "font": {
+          "type": "font",
+          "font": "Press Start 2p"
+        }
+      },
+      "name": "TextoJoyconAzul",
+      "order": 7.506425314100608
     }
   },
   "spaces": {
