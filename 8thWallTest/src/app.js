@@ -2,7 +2,7 @@ const onxrloaded = () => {
   XR8.XrController.configure({
     imageTargetData: [
       require('../image-targets/TarjetaTrackingProfe.json'),
-      require('../image-targets/TarjetaProfesionalSPH.json')
+      require('../image-targets/TarjetaProfesionalSPHCorregida.json')
 
     ],
   })

@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 47,
+    "left": 0,
+    "width": 1240,
+    "height": 1653,
+    "isRotated": false,
+    "originalWidth": 1240,
+    "originalHeight": 1748
+  },
+  "imagePath": "image-targets/TarjetaProfesionalSPHCorregida_luminance.png",
+  "metadata": null,
+  "name": "TarjetaProfesionalSPHCorregida",
+  "resources": {
+    "originalImage": "TarjetaProfesionalSPHCorregida_original.png",
+    "croppedImage": "TarjetaProfesionalSPHCorregida_cropped.png",
+    "thumbnailImage": "TarjetaProfesionalSPHCorregida_thumbnail.png",
+    "luminanceImage": "TarjetaProfesionalSPHCorregida_luminance.png"
+  },
+  "created": 1787004678056,
+  "updated": 1787004678056
+}

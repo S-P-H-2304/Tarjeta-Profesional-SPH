@@ -4,14 +4,22 @@ ecs.registerComponent({
   name: 'trackerVideoAnimationSync',
   schema: {
     switchModel: ecs.eid,
+    videoTouchOverlay: ecs.eid,
     videoScreen: ecs.eid,
     video: ecs.eid,
     dpadPlayIcon: ecs.eid,
     dpadRestartIcon: ecs.eid,
+    playGuideText: ecs.eid,
+    restartGuideText: ecs.eid,
   },
   stateMachine: ({world, eid, schemaAttribute}) => {
-    const {switchModel, videoScreen, video, dpadPlayIcon, dpadRestartIcon} = schemaAttribute.get(eid)
+    const {
+      switchModel, videoTouchOverlay, videoScreen, video,
+      dpadPlayIcon, dpadRestartIcon,
+      playGuideText, restartGuideText,
+    } = schemaAttribute.get(eid)
 
+    let started = false
     let animationFinished = false
     let videoWasPlayingWhenLost = false
 
@@ -26,8 +34,20 @@ ecs.registerComponent({
       step()
     }
 
+    const startAnimation = () => {
+      if (started) return
+
+      started = true
+      ecs.GltfModel.mutate(world, switchModel, (cursor) => {
+        cursor.paused = false
+        return false
+      })
+    }
+
     ecs.defineState('default')
       .initial()
+      .listen(switchModel, ecs.input.SCREEN_TOUCH_START, startAnimation)
+      .listen(videoTouchOverlay, ecs.input.UI_CLICK, startAnimation)
       .listen(switchModel, ecs.events.GLTF_ANIMATION_FINISHED, () => {
         animationFinished = true
 
@@ -52,12 +72,28 @@ ecs.registerComponent({
           })
         }, 0, 1, 2500)
 
+        fadeOpacity((value) => {
+          ecs.Ui.mutate(world, playGuideText, (cursor) => {
+            cursor.opacity = value
+            return false
+          })
+        }, 0, 1, 2500)
+
+        fadeOpacity((value) => {
+          ecs.Ui.mutate(world, restartGuideText, (cursor) => {
+            cursor.opacity = value
+            return false
+          })
+        }, 0, 1, 2500)
+
         ecs.VideoControls.mutate(world, video, (cursor) => {
           cursor.paused = false
           return false
         })
       })
       .listen(world.events.globalId, ecs.events.REALITY_IMAGE_LOST, () => {
+        if (!started) return // todavía no se ha tocado nada, no hay nada que pausar
+
         if (!animationFinished) {
           ecs.GltfModel.mutate(world, switchModel, (cursor) => {
             cursor.paused = true
@@ -72,6 +108,8 @@ ecs.registerComponent({
         }
       })
       .listen(world.events.globalId, ecs.events.REALITY_IMAGE_FOUND, () => {
+        if (!started) return // primera detección: esperar el toque del usuario, no autoarrancar
+
         if (!animationFinished) {
           ecs.GltfModel.mutate(world, switchModel, (cursor) => {
             cursor.paused = false

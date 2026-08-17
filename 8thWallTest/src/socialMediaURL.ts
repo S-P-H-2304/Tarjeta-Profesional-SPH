@@ -11,7 +11,7 @@ ecs.registerComponent({
 
     ecs.defineState('default')
       .initial()
-      .listen(button, ecs.input.UI_CLICK, () => {
+      .listen(button, ecs.input.SCREEN_TOUCH_START, () => {
         window.open(url, '_blank', 'noopener,noreferrer')
       })
   },
